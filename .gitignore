@@ -1,6 +1,12 @@
 *.d
 *.o
+*.obj
+*.exe
+*.pdb
+*.ilk
 .deps
+/dist/
+build_win.log
 Makefile
 Makefile.in
 aclocal.m4

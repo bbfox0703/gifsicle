@@ -23,7 +23,7 @@ CFLAGS = -I.. -I..\include -DHAVE_CONFIG_H -D_CONSOLE /W2 /O2
 LDLIBS = setargv.obj
 
 GIFSICLE_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifunopt.obj \
-	$(GIFWRITE_OBJ) merge.obj optimize.obj quantize.obj support.obj \
+	kcolor.obj $(GIFWRITE_OBJ) merge.obj optimize.obj quantize.obj support.obj \
 	xform.obj gifsicle.obj
 
 GIFDIFF_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifdiff.obj
@@ -47,6 +47,7 @@ gifwrite.obj: ..\config.h gifwrite.c ..\include\lcdfgif\gif.h
 ungifwrt.obj: ..\config.h ungifwrt.c ..\include\lcdfgif\gif.h
 gifunopt.obj: ..\config.h gifunopt.c ..\include\lcdfgif\gif.h
 
+kcolor.obj: ..\config.h gifsicle.h kcolor.h kcolor.c
 merge.obj: ..\config.h gifsicle.h merge.c
 optimize.obj: ..\config.h gifsicle.h optimize.c
 quantize.obj: ..\config.h gifsicle.h quantize.c

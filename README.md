@@ -51,7 +51,21 @@ use `./configure --disable-gifdiff`.
 Building Gifsicle on Windows
 ----------------------------
 
-To build Gifsicle on Windows using Visual C, change into the `src`
+The easiest way is the `build.cmd` wrapper in the repository root. It
+auto-detects an already-installed Visual Studio / Build Tools (via
+`vswhere`), loads the matching MSVC environment, and builds a 64-bit
+`gifsicle.exe` and `gifdiff.exe` into `dist\x64\`. From a normal command
+prompt (no Developer Prompt needed) run:
+
+    build            REM x64 release (default)
+    build x86        REM 32-bit build
+    build clean      REM clean, then build
+    build --help     REM all options
+
+Nothing is downloaded or installed; only the compiler already on the
+machine is used.
+
+To build manually with Visual C instead, change into the `src`
 directory and run
 
     nmake -f Makefile.w32

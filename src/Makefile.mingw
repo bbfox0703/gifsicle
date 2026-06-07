@@ -27,7 +27,7 @@ MINGWFLAGS = -DHAVE_UINTPTR_T -DHAVE_INTTYPES_H
 CFLAGS = -I.. -I..\include -DHAVE_CONFIG_H=1 -D_CONSOLE -O2 $(MINGWFLAGS)
 
 GIFSICLE_OBJS = clp.o fmalloc.o giffunc.o gifread.o gifunopt.o \
-	$(GIFWRITE_OBJ) merge.o optimize.o quantize.o support.o \
+	kcolor.o $(GIFWRITE_OBJ) merge.o optimize.o quantize.o support.o \
 	xform.o gifsicle.o
 
 GIFDIFF_OBJS = clp.o fmalloc.o giffunc.o gifread.o gifdiff.o
@@ -51,6 +51,7 @@ gifwrite.o: ..\config.h gifwrite.c ..\include\lcdfgif\gif.h
 ungifwrt.o: ..\config.h ungifwrt.c ..\include\lcdfgif\gif.h
 gifunopt.o: ..\config.h gifunopt.c ..\include\lcdfgif\gif.h
 
+kcolor.o: ..\config.h gifsicle.h kcolor.h kcolor.c
 merge.o: ..\config.h gifsicle.h merge.c
 optimize.o: ..\config.h gifsicle.h optimize.c
 quantize.o: ..\config.h gifsicle.h quantize.c
