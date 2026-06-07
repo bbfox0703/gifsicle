@@ -28,7 +28,7 @@ GIFSICLE_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifunopt.obj \
 	kcolor.obj $(GIFWRITE_OBJ) merge.obj optimize.obj quantize.obj support.obj \
 	xform.obj gifsicle.obj
 
-GIFDIFF_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifdiff.obj
+GIFDIFF_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifdiff.obj kcolor.obj
 
 .c.obj:
 	$(CC) $(CFLAGS) /c $<
