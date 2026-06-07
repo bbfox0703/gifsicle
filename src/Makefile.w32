@@ -19,7 +19,9 @@ GIFWRITE_OBJ = gifwrite.obj
 #GIFWRITE_OBJ = ungifwrt.obj
 
 CC = cl
-CFLAGS = -I.. -I..\include -DHAVE_CONFIG_H -D_CONSOLE /W2 /O2
+# /MT     : link the static CRT (no VCRUNTIME/UCRT DLL dependency)
+# /arch:AVX2 : emit AVX2 + FMA code (requires Intel Haswell / AMD Excavator+)
+CFLAGS = -I.. -I..\include -DHAVE_CONFIG_H -D_CONSOLE /W2 /O2 /MT /arch:AVX2
 LDLIBS = setargv.obj
 
 GIFSICLE_OBJS = clp.obj fmalloc.obj giffunc.obj gifread.obj gifunopt.obj \
